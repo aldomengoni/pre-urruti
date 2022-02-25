@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Vista de lista al abrir el menu del modelo Color -->
+    <record id="color_list_view" model="ir.ui.view">
+        <field name="name">color.list.view</field>
+        <field name="model">product_extra_fields.product_color</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario al abrir el menu del modelo Color -->
+    <record id="color_form_view" model="ir.ui.view">
+        <field name="name">color.form.view</field>
+        <field name="model">product_extra_fields.product_color</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

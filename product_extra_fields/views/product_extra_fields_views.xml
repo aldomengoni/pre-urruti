@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Campos extra en la vista formulario -->
+    <record id="product_extrafields_form" model="ir.ui.view">
+        <field name="name">product_extrafields_form_view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <group name="group_general" position="after">
+                <group>
+                    <field name="life_stage"/>
+                    <field name="breed_size"/>
+                    <field name="size"/>
+                    <field name="color" string="Color"/>
+                    <field name="pet_weight"/>
+                    <field name="influencer" widget="radio"/>
+                    <field name="en_tienda"/>
+                    <field name="deliv_mismo"/>
+                    <field name="deliv_program"/>
+                    <field name="suscrp"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+    <!-- Campos extra en la vista de lista (tree) -->
+    <record id="product_extrafields_list" model="ir.ui.view">
+        <field name="name">product_extrafields_list_view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="standard_price" position="after">
+                <field name="life_stage" optional="hide"/>
+                <field name="breed_size" optional="hide"/>
+                <field name="size" optional="hide"/>
+                <field name="color" optional="hide"/>
+                <field name="pet_weight" optional="hide"/>
+                <field name="influencer" optional="hide"/>
+                <field name="en_tienda" optional="hide"/>
+                <field name="deliv_mismo" optional="hide"/>
+                <field name="deliv_program" optional="hide"/>
+                <field name="suscrp" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Accion que abre seccion Etapa de Vida -->
+    <record id="action_life_stage_profile" model="ir.actions.act_window">
+        <field name="name">Perfil Etapa de Vida</field>
+        <field name="res_model">product_extra_fields.product_life_stage</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Accion que abre seccion Tamano de Raza -->
+    <record id="action_breed_size_profile" model="ir.actions.act_window">
+        <field name="name">Perfil Tamaño de Raza</field>
+        <field name="res_model">product_extra_fields.product_breed_size</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Accion que abre seccion Talla -->
+    <record id="action_size_profile" model="ir.actions.act_window">
+        <field name="name">Perfil Talla</field>
+        <field name="res_model">product_extra_fields.product_size</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Accion que abre seccion Color -->
+    <record id="action_color_profile" model="ir.actions.act_window">
+        <field name="name">Perfil Color</field>
+        <field name="res_model">product_extra_fields.product_color</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Accion que abre seccion Peso de la Mascota -->
+    <record id="action_pet_weight_profile" model="ir.actions.act_window">
+        <field name="name">Perfil Peso de la Mascota</field>
+        <field name="res_model">product_extra_fields.product_pet_weight</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Accion que abre seccion Influencer -->
+    <record id="action_influencer_profile" model="ir.actions.act_window">
+        <field name="name">Perfil Influencer</field>
+        <field name="res_model">product_extra_fields.product_influencer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Estructura de menus -->
+    <menuitem id="extrafields_root_menu" name="Product Extra Fields"/>
+    <menuitem id="extrafields_lifestage_menu" action="action_life_stage_profile" parent="extrafields_root_menu" name="Etapas de Vida"/>
+    <menuitem id="extrafields_breedsize_menu" action="action_breed_size_profile" parent="extrafields_root_menu" name="Tamaños de Raza"/>
+    <menuitem id="extrafields_size_menu" action="action_size_profile" parent="extrafields_root_menu" name="Tallas"/>
+    <menuitem id="extrafields_color_menu" action="action_color_profile" parent="extrafields_root_menu" name="Colores"/>
+    <menuitem id="extrafields_petweight_menu" action="action_pet_weight_profile" parent="extrafields_root_menu" name="Pesos de la Mascota"/>
+    <menuitem id="extrafields_influencer_menu" action="action_influencer_profile" parent="extrafields_root_menu" name="Influencers"/>
+
+    <!--<menuitem id="life_stage_profile_menu" action="action_life_stage_profile" parent="extrafields_lifestage_menu"/>-->
+    <!--<menuitem id="breed_size_profile_menu" action="action_breed_size_profile" parent="extrafields_breedsize_menu"/>-->
+</odoo>
