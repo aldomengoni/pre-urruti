@@ -7,6 +7,15 @@
     'description': """
         Se agregan los siguientes campos:
          - Etapa de Vida
+         - Tamaño de raza
+         - Talla
+         - Color
+         - Peso de la mascota
+         - Influencer
+         - Entrega en tienda
+         - Delivery mismo día
+         - Delivery programado
+         - Permite suscripción
     """,
 
     'author': "User 01",
