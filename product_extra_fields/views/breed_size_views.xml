@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Vista de lista al abrir el menu del modelo Tamano de Raza -->
+    <record id="breed_size_list_view" model="ir.ui.view">
+        <field name="name">breed_size.list.view</field>
+        <field name="model">product_extra_fields.product_breed_size</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="intervalo"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario al abrir el menu del modelo Tamano de Raza -->
+    <record id="breed_size_form_view" model="ir.ui.view">
+        <field name="name">breed_size.form.view</field>
+        <field name="model">product_extra_fields.product_breed_size</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="intervalo"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

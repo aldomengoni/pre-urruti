@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Vista de lista al abrir el menu del modelo Influencer -->
+    <record id="influencer_list_view" model="ir.ui.view">
+        <field name="name">influencer.list.view</field>
+        <field name="model">product_extra_fields.product_influencer</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario al abrir el menu del modelo Influencer -->
+    <record id="influencer_form_view" model="ir.ui.view">
+        <field name="name">influencer.form.view</field>
+        <field name="model">product_extra_fields.product_influencer</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>
