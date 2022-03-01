@@ -7,11 +7,11 @@
     'description': """
         Se agregan los siguientes campos:
          - Etapa de Vida
-         - Tamaño de raza
+         - Tamaño de Raza
          - Talla
          - Color
-         - Peso de la mascota
-         - Influencer
+         - Peso de la Mascota
+         - Influencers
          - Entrega en tienda
          - Delivery mismo día
          - Delivery programado
@@ -37,4 +37,6 @@
         'views/product_extra_fields_views.xml',
         'security/ir.model.access.csv',
     ],
+
+    'license': 'LGPL-3',
 }
